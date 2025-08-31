@@ -1,0 +1,78 @@
+<div class="container mx-auto my-8 px-4">
+  <h2 class="text-3xl font-bold text-blue-700 mb-6">Gestión de Productos</h2>
+
+  <!-- Formulario -->
+  <div class="bg-gray-50 p-6 rounded-lg shadow-md mb-8">
+    <h3 class="text-2xl font-semibold text-blue-700 mb-4">
+      {{ editando ? 'Editar Producto' : 'Agregar Producto' }}
+    </h3>
+
+    <form (ngSubmit)="agregarProducto()" #productoForm="ngForm" class="grid grid-cols-1 md:grid-cols-5 gap-4 items-end">
+
+      <div>
+        <label class="block font-semibold mb-1">Código</label>
+        <input type="text" placeholder="Código" [(ngModel)]="nuevoProducto.codigo" name="codigo" required class="input">
+      </div>
+
+      <div>
+        <label class="block font-semibold mb-1">Descripción</label>
+        <input type="text" placeholder="Descripción" [(ngModel)]="nuevoProducto.descripcion" name="descripcion" class="input">
+      </div>
+
+      <div>
+        <label class="block font-semibold mb-1">Precio</label>
+        <input type="number" placeholder="Precio" [(ngModel)]="nuevoProducto.precio" name="precio" required class="input">
+      </div>
+
+      <div>
+        <label class="block font-semibold mb-1">Cantidad</label>
+        <input type="number" placeholder="Cantidad" [(ngModel)]="nuevoProducto.cantidad" name="cantidad" required class="input">
+      </div>
+
+      <div class="flex items-center gap-2">
+        <label class="font-semibold">
+          <input type="checkbox" [(ngModel)]="nuevoProducto.iva_incluido" name="iva_incluido" class="mr-2">
+          IVA incluido
+        </label>
+      </div>
+
+      <div class="md:col-span-5 flex gap-3 mt-2">
+        <button type="submit" [disabled]="!productoForm.form.valid" class="btn-blue">
+          {{ editando ? 'Actualizar Producto' : 'Agregar Producto' }}
+        </button>
+        <button type="button" *ngIf="editando" (click)="cancelarEdicion()" class="btn-red">Cancelar</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Tabla -->
+  <div class="overflow-x-auto">
+    <table class="min-w-full bg-white rounded-lg shadow-md divide-y divide-gray-200">
+      <thead class="bg-blue-700 text-white">
+        <tr>
+          <th>ID</th>
+          <th>Código</th>
+          <th>Descripción</th>
+          <th>Precio c/IVA</th>
+          <th>Cantidad</th>
+          <th>IVA</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of productos" class="hover:bg-gray-100 transition">
+          <td>{{ p.producto_id }}</td>
+          <td>{{ p.codigo }}</td>
+          <td>{{ p.descripcion }}</td>
+          <td>{{ precioConIva(p) | currency:'USD':'symbol':'1.2-2' }}</td>
+          <td>{{ p.cantidad }}</td>
+          <td>{{ p.iva_incluido ? 'Incluido' : 'No incluido' }}</td>
+          <td class="flex gap-2">
+            <button (click)="editarProducto(p)" class="btn-blue">Editar</button>
+            <button (click)="eliminarProducto(p.producto_id)" class="btn-red">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

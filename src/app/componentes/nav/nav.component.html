@@ -1,0 +1,33 @@
+<nav style="background-color: #17174d; color: #cbd5e1;" class="border-b">
+  <div class="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between px-4 py-4">
+    <!-- Logo -->
+    <a routerLink="/" class="flex items-center space-x-3 text-white">
+      <img src="https://centrocomerciallaballena.com/wp-content/uploads/2024/05/PC-Store-Centro-Comercial-La-Ballena.png"
+           alt="Logo PC" class="h-10 w-auto" />
+      <span class="font-bold text-xl">PC Store</span>
+    </a>
+
+    <!-- Botón menú responsive -->
+    <button data-collapse-toggle="navbar-default" type="button"
+      class="inline-flex items-center p-2 w-10 h-10 justify-center text-[#cbd5e1] rounded-lg md:hidden hover:bg-[#004d59] focus:outline-none focus:ring-2 focus:ring-[#004d59]"
+      aria-controls="navbar-default" aria-expanded="false">
+      <span class="sr-only">Abrir menú principal</span>
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+
+    <!-- Enlaces de navegación -->
+    <div class="hidden w-full md:flex md:items-center md:w-auto" id="navbar-default">
+      <ul class="flex flex-col md:flex-row md:space-x-8 mt-4 md:mt-0 font-medium">
+        <li><a routerLink="/clientes" class="block py-2 px-3 text-[#cbd5e1] hover:text-white md:p-0">Clientes</a></li>
+        <li><a routerLink="/productos" class="block py-2 px-3 text-[#cbd5e1] hover:text-white md:p-0">Productos</a></li>
+        <li><a routerLink="/comprar" class="block py-2 px-3 text-[#cbd5e1] hover:text-white md:p-0">Compras</a></li>
+        <li><a routerLink="/productos-disponibles" class="nav-link">Productos Disponibles</a></li>
+        
+      </ul>
+    </div>
+
+    
+  </div>
+</nav>

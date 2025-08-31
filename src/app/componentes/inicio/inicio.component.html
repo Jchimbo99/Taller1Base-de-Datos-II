@@ -1,0 +1,39 @@
+<section class="min-h-screen fondo flex items-center pt-20 px-8">
+  <div class="container mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="space-y-8">
+        <h1 class="text-5xl md:text-6xl font-bold leading-tight">
+          <span class="gradient-text animate-text-gradient">Venta de</span>
+          <br><span class="gradient-text animate-text-gradient">Componentes de PC</span>
+        </h1>
+        <p class="text-lg opacity-80 max-w-lg">
+          Encuentra las mejores marcas en fuentes de poder, tarjetas madre, memorias RAM, monitores, y mucho más.
+          Rendimiento, calidad y buen precio para gamers y profesionales.
+        </p>
+        <div class="flex space-x-4">
+          <button routerLink="productos"
+            class="px-6 py-3 bg-gradient-to-r from-neon to-cyber rounded-lg font-medium hover:shadow-lg hover:shadow-cyan-500/30 transition-all">
+            Ver Productos
+          </button>
+          <button routerLink="contacto" class="px-6 py-3 border border-glass rounded-lg hover:bg-glass transition-all">
+            Contáctanos
+          </button>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="tilt-effect" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-perspective="1000">
+          <div class="glass-card rounded-2xl p-1">
+            <img
+              src="https://i.postimg.cc/Wzx4Wc06/la-mejor-pc-gamer.jpg"
+              alt="Componentes PC" class="rounded-xl w-full h-auto">
+          </div>
+        </div>
+        <div class="absolute -bottom-6 -left-6 w-24 h-24 bg-neon rounded-full opacity-20 animate-pulse-slow -z-10">
+        </div>
+        <div class="absolute -top-6 -right-6 w-32 h-32 bg-cyber rounded-full opacity-20 animate-pulse-slow -z-10"
+          style="animation-delay: 2s;"></div>
+      </div>
+    </div>
+  </div>
+</section>
+

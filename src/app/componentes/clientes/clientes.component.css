@@ -1,0 +1,17 @@
+/* Hover sutil para tarjetas */
+div.bg-white:hover {
+  transform: translateY(-4px);
+}
+
+/* Inputs y botones ya están estilizados con Tailwind/Flowbite, 
+   aquí solo añadimos mejoras opcionales */
+input:focus {
+  outline: none;
+}
+
+/* Responsive adicional si quieres ajustes finos */
+@media (max-width: 640px) {
+  .grid-cols-3 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
